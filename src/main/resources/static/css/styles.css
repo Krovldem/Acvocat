@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700');
+
 body {
     background: radial-gradient(circle, #4D4D4D, #1E1E1E);
     font-family: Arial, sans-serif;
@@ -10,37 +12,36 @@ p {
 	line-height: 150%;
 	text-align: center;
 	color: MintCream;
-	letter-spacing: .5px;
-  }
+	letter-spacing: 1px;
+}
 
-  .container {
-	width: 100%;
-	height: 60vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-  }
+.container {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
   
-  h1 {
-	font-size: 120px;
-	text-transform: uppercase;
-	font-family: 'Gambetta', serif;
-	letter-spacing: -3px;
-	transition: 700ms ease;
-	font-variation-settings: "wght" 311;
-	margin-bottom: 0.8rem;
-	color: PaleGoldenRod;
-	outline: none;
-	text-align: center;
-  }
+h1 {
+  font-size: 120px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: PaleGoldenRod;
+  outline: none;
+  text-align: center;
+}
   
   h1:hover {
 	font-variation-settings: "wght" 582; 
 	letter-spacing: 1px;
   }
 
-* { box-sizing: border-box; }
 body {
   margin: 0;
   background: #373737;
@@ -91,7 +92,7 @@ nav ul {
 .topmenu li a:hover { color: #D5B45B; }
 .submenu-link:after {
   content: "\f107";
-  font-family: "FontAwesome";
+  font-family: "FontAwesome", serif;
   color: inherit;
   margin-left: 10px;
 }
@@ -156,10 +157,9 @@ nav ul {
 }
 
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
-
 * {
-  font-family: Open Sans;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 section {
@@ -331,8 +331,6 @@ section {
   margin-right: 3px;
   margin-bottom: 5px;
 }
-
-/* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
 
