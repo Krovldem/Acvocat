@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ru.krovlDem.users',
-    'ru.krovlDem.pages'
 ]
 
 MIDDLEWARE = [
