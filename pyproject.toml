@@ -19,6 +19,7 @@ exclude = [
 python = "^3.12"
 Django = "^5.0.7"
 setuptools = "^72.1.0"
+redmail = "^0.6.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.2"
