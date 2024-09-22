@@ -1,4 +1,0 @@
-application:
-  database:
-    type: sqlite3
-    name: db.sqlite3

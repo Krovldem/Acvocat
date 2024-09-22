@@ -1,3 +1,5 @@
 /.pytest_cache
 src/main/resources/database/db.sqlite3
 /.idea
+/.env
+/db.sqlite3

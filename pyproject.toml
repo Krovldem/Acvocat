@@ -2,28 +2,15 @@
 name = "acvocat"
 version = "0.1.0"
 description = ""
-authors = [
-    "Ivan Lukovkin <iamlukovkin@gmail.com>",
-    "Tatyana Richard <krovlDem@gmail.com>"
-]
+authors = ["Ivan Lukovkin <121473397+iamlukovkin@users.noreply.github.com>"]
 readme = "README.md"
-repository = "https://github.com/Krovldem/Acvocat"
-packages = [
-    {include = "*", from="src/main/python"},
-]
-exclude = [
-    { path = ".pytest_cache" }
-]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-Django = "^5.0.7"
-setuptools = "^72.1.0"
-redmail = "^0.6.0"
+django = "^5.1.1"
+setuptools = "^75.1.0"
 python-dotenv = "^1.0.1"
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.2"
 
 [build-system]
 requires = ["poetry-core"]
