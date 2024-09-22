@@ -10,3 +10,8 @@
 poetry update
 poetry run python manage.py runserver
 ```
+
+## Install poetry
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
