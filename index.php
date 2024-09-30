@@ -25,7 +25,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="generator" content="Mobirise v5.9.18, mobirise.com" />
-    <meta name="yandex-verification" content="8f67ba417248d171" />
+    <meta name="yandex-verification" content="f0e2e43b7cfce1b7" />
     <meta name="google-site-verification" content="NYMRXa9uypTiSkzPYmQPqXJpEX0-1munILiaf7ASOnI" />
     <meta
         name="viewport"
