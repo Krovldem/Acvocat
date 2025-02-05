@@ -1,31 +1,11 @@
-<?php require ("./script.php"); ?>
-<?php
-    $response = '';
-    if (isset($_POST['submit'])) {
-        if (
-                empty($_POST['email'])
-                || empty($_POST['name'])
-                || empty($_POST['textarea'])
-                || empty($_POST['phone_number'])
-        ) {
-            $response = 'Заполните все поля!';
-        } else {
-            $response = sendMailTransactional(
-                    $_POST['email'],
-                    $_POST['name'],
-                    $_POST['textarea'],
-                    $_POST['phone_number']
-            );
-        }
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="ru-ru" xmlns="">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="generator" content="Mobirise v5.9.18, mobirise.com" />
-    <meta name="yandex-verification" content="f0e2e43b7cfce1b7" />
+    <meta name="yandex-verification" content="8f67ba417248d171" />
     <meta name="google-site-verification" content="NYMRXa9uypTiSkzPYmQPqXJpEX0-1munILiaf7ASOnI" />
     <meta
         name="viewport"
@@ -36,7 +16,10 @@
         name="description"
         content="Эффективные юридические услуги для вашего спокойствия. Заполните форму для консультации и узнайте, как мы можем помочь вам."
     />
-
+    <meta
+            name="Description"
+            content="Эффективные юридические услуги для вашего спокойствия. Заполните форму для консультации и узнайте, как мы можем помочь вам."
+    />
     <title>Адвокат Донченко</title>
     <link
         rel="stylesheet"
@@ -72,6 +55,7 @@
         href="assets/mobirise/css/mbr-additional.css?v=kBW90h"
         type="text/css"
     />
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -219,8 +203,7 @@
                             <div class="item features-without-image col-12 active">
                                 <div class="item-wrapper">
                                     <p class="mbr-text mbr-fonts-style display-7">
-                                        Не оставляйте свои проблемы на потом - действуйте
-                                        сейчас!
+                                        Не оставляйте свои проблемы на потом - действуйте сейчас!
                                     </p>
                                 </div>
                             </div>
@@ -259,9 +242,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form
-                    action=""
-                    method="POST"
+                <form id="requestForm"
                     enctype="multipart/form-data"
                     class="mbr-form form-with-styler"
                     data-form-title="Form Name"
@@ -331,22 +312,14 @@
                       id="textarea-contact-form-3-uoZUejhq3a"
                   ></textarea>
                         </div>
-                        <div
-                            class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"
-                        >
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
                             <button type="submit" name="submit" class="btn btn-white-outline display-7">
                                 Отправить заявку
                             </button>
-
                         </div>
                     </div>
                 </form>
-                    <?php if (@$response == "") { ?>
-                    <?php } else if (@$response == "success") { ?>
-                        <p class="mbr-text mbr-fonts-style display-7">Ваша заявка принята!</p>
-                    <?php } else { ?>
-                        <p class="mbr-text mbr-fonts-style display-7">Ваша заявка не была отправлена. Проверьте введенные данные!</p>
-                    <?php } ?>
+                <div class="align-center mbr-white mbr-fonts-style mb-3 display-7" id="response_answer"></div>
             </div>
         </div>
     </div>
@@ -609,5 +582,35 @@
     </div>
 </section>
 </body>
+<script>
+    const form = document.getElementById('requestForm');
+    const responseDiv = document.getElementById('response_answer');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        fetch('send_email.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then((response) => response.text())
+            .then((data) => {
+                data = JSON.parse(data);
+                responseDiv.innerHTML = data['answer'] === "1"
+                    ? "Ваша заявка принята!"
+                    : "Ваша заявка не принята.<br>Проверьте введенные данные и повторите попытку.";
+                responseDiv.style.color = data['answer'] === "1" ? "#ffe599" : "#ff9e7b";
+                responseDiv.style.display = "block";
+                setTimeout(() => {
+                    responseDiv.style.opacity = 0;
+                    responseDiv.style.transition = "opacity 1s";
+                    setTimeout(() => {
+                        responseDiv.style.display = "none";
+                    }, 1000);
+                }, 2000);
+                responseDiv.style.opacity = 1;
+            });
+    });
+</script>
 </html>
 

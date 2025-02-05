@@ -9,5 +9,5 @@
     const REPLY_TO_NAME = 'Admin';
     const SITE_URL = 'vsdonchenko.ru';
     const SITE_OWNER = 'Вячеслав Донченко';
-    const SITE_OWNER_EMAIL = 'iamlukovkin@gmail.com';
+    const SITE_OWNER_EMAIL = 'rsaum@yandex.ru';
     const IS_DEBUG = false;

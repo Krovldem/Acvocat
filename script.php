@@ -115,15 +115,8 @@ function sendMailTransactional($email, $name, $message, $phone): string {
             $email, "Вами было отправлено обращение",
             createMessageToUser($name, $email, $message, $phone)
         );
-        if ($isSentToOwner) {
-            return "success";
-        } else {
-            return "error";
-        }
+        return $isSentToOwner;
     } catch (Exception $e) {
-        if ($isSentToOwner) {
-            return "success";
-        }
-        return "error";
+        return $isSentToOwner;
     }
 }
