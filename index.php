@@ -525,10 +525,11 @@
             </div>
             <div class="map-wrapper col-md-12 col-lg-6">
                 <div class="google-map">
-                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a58f20cf9a2b54d48c39b64ad3282fe8a3d700d2b09e4aae6fc20dbec037adc&amp;source=constructor"
-                            width="500"
-                            height="400">
-                    </iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab677dfce74b1403ffcdddae6df871ee131308bada9622b4f9bfaa985741e8029&amp;source=constructor"
+                     width="500" 
+                     height="400" 
+                     frameborder="0">
+                </iframe>
                 </div>
             </div>
         </div>
